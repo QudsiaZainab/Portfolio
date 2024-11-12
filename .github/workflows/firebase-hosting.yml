@@ -3,7 +3,7 @@ name: Deploy to Firebase Hosting
 on:
   push:
     branches:
-      - main  # This triggers the deployment on every push to the main branch
+      - main  # Trigger the deployment on every push to the main branch
 
 jobs:
   build-and-deploy:
@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18'  # Specify your Node.js version if different
+          node-version: '18'  # Specify your Node.js version here
 
       # Install dependencies
       - name: Install dependencies
@@ -32,12 +32,8 @@ jobs:
       - name: Install Firebase CLI
         run: npm install -g firebase-tools
 
-      # Authenticate with Firebase using Service Account Key
-      - name: Authenticate with Firebase
-        run: |
-          echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > $HOME/firebase-service-account.json
-          export GOOGLE_APPLICATION_CREDENTIALS=$HOME/firebase-service-account.json
-
-      # Deploy to Firebase Hosting
+      # Authenticate with Firebase using FIREBASE_TOKEN
       - name: Deploy to Firebase Hosting
-        run: firebase deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}  # Use the token stored in GitHub Secrets
+        run: firebase deploy --only hosting --token $FIREBASE_TOKEN
