@@ -20,7 +20,6 @@ const Header: React.FC = () => {
     dispatch(toggleTheme());
   };
 
-  // Function to handle link click and close the menu
   const handleLinkClick = () => {
     setIsMenuOpen(false);
   };
