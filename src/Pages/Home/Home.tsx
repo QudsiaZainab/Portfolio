@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback, useMemo } from 'react';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { Services } from '../../Components/Services/Services';
 import {  useDispatch } from 'react-redux';
@@ -21,15 +21,15 @@ const Home = () => {
     const [isDeleting, setIsDeleting] = useState(false);
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(300 - Math.random() * 100);
-    const toRotate = ["Software Engineer", "Web Developer", "Android Developer"];
+    // const toRotate = ["Software Engineer", "Web Developer", "Android Developer"];
     const period = 2000;
     useScrollReveal();
 
     const location = useLocation();
     const navigate = useNavigate();
+    const toRotate = useMemo(() => ["Software Engineer", "Web Developer", "Android Developer"], []);
 
-
-    const tick = () => {
+    const tick = useCallback(() => {
         let i = loopNum % toRotate.length;
         let fullText = toRotate[i];
         let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
@@ -47,13 +47,11 @@ const Home = () => {
             setIsDeleting(false);
             setLoopNum(loopNum + 1);
             setDelta(500);
-        } else {
         }
-    }
+    }, [isDeleting, loopNum, text, toRotate]);
 
     useEffect(() => {
         const sections = document.querySelectorAll('section');
-
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
 
@@ -75,27 +73,25 @@ const Home = () => {
         }, delta);
 
         const params = new URLSearchParams(location.search);
-    const scrollTo = params.get('scrollTo');
-    
-    if (scrollTo) {
-      const element = document.getElementById(scrollTo);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+        const scrollTo = params.get('scrollTo');
+        
+        if (scrollTo) {
+            const element = document.getElementById(scrollTo);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
 
-      // Clear the query parameter after the scroll
-      params.delete('scrollTo');
-      navigate(`${location.pathname}?${params.toString()}`, { replace: true });
-    }
+            // Clear the query parameter after the scroll
+            params.delete('scrollTo');
+            navigate(`${location.pathname}?${params.toString()}`, { replace: true });
+        }
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
             clearInterval(ticker);
         };
 
-
-
-    }, [dispatch, text, location, delta, navigate, tick]);
+    }, [dispatch, location, delta, navigate, tick]);
 
 
 
