@@ -5,7 +5,7 @@ import { useState } from 'react';
 import './BlogsPage.css';
 import { Link } from 'react-router-dom';
 
-export const BlogsPage = () => {
+const BlogsPage = () => {
   const dispatch = useDispatch();
   const { blogs, filter } = useSelector((state: RootState) => state.blogs);
   const [searchQuery, setSearchQuery] = useState('');
@@ -119,3 +119,6 @@ export const BlogsPage = () => {
     </section>
   );
 };
+
+
+export default BlogsPage;

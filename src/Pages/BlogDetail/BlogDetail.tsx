@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { RootState } from '../../Store/Store';
 import './BlogDetail.css';
 
-export const BlogDetail = () => {
+const BlogDetail = () => {
   const { id } = useParams<{ id: string }>();
   const blogId = id ? parseInt(id, 10) : NaN;
 
@@ -26,3 +26,5 @@ export const BlogDetail = () => {
     </section>
   );
 };
+
+export default BlogDetail;

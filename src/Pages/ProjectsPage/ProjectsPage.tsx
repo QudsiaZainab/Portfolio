@@ -6,7 +6,7 @@ import './ProjectsPage.css';
 import { Project } from '../../Types/ProjectType';
 import { ProjectModal } from '../../Components/ProjectModal/ProjectModal';
 
-export const ProjectsPage = () => {
+const ProjectsPage = () => {
   const dispatch = useDispatch();
   const { projects, filter } = useSelector((state: RootState) => state.projects);
   const [searchQuery, setSearchQuery] = useState('');
@@ -139,3 +139,6 @@ export const ProjectsPage = () => {
     </section>
   );
 };
+
+
+export default ProjectsPage;
