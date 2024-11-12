@@ -14,11 +14,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Set up Node.js environment (Updated to v18)
+      # Set up Node.js environment
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18'  # Updated Node.js version to 18
+          node-version: '18'  # Specify your Node.js version if different
 
       # Install dependencies
       - name: Install dependencies
