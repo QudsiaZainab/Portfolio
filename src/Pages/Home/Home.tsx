@@ -18,12 +18,10 @@ import Contact  from '../Contact/Contact';
 
 const Home = () => {
     const dispatch = useDispatch();
-    const { projects, filter } = useSelector((state: RootState) => state.projects);
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(300 - Math.random() * 100);
-    const [index, setIndex] = useState(1);
     const toRotate = ["Software Engineer", "Web Developer", "Android Developer"];
     const period = 2000;
     useScrollReveal();
@@ -77,7 +75,7 @@ const Home = () => {
 
 
 
-    }, [dispatch, text, location]);
+    }, [dispatch, text, location, delta, navigate]);
 
     const tick = () => {
         let i = loopNum % toRotate.length;
@@ -92,15 +90,12 @@ const Home = () => {
 
         if (!isDeleting && updatedText === fullText) {
             setIsDeleting(true);
-            setIndex(prevIndex => prevIndex - 1);
             setDelta(period);
         } else if (isDeleting && updatedText === '') {
             setIsDeleting(false);
             setLoopNum(loopNum + 1);
-            setIndex(1);
             setDelta(500);
         } else {
-            setIndex(prevIndex => prevIndex + 1);
         }
     }
 

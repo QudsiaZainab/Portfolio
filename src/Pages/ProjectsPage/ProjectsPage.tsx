@@ -4,6 +4,7 @@ import { RootState } from '../../Store/Store';
 import { useState } from 'react';
 import './ProjectsPage.css';
 import { Project } from '../../Types/ProjectType';
+import { ProjectModal } from '../../Components/ProjectModal/ProjectModal';
 
 export const ProjectsPage = () => {
   const dispatch = useDispatch();
@@ -124,6 +125,16 @@ export const ProjectsPage = () => {
             </button>
           )}
         </div>
+      )}
+
+{selectedProject && (
+        <ProjectModal
+          title={selectedProject.title}
+          description={selectedProject.description}
+          projectLink={selectedProject.projectLink}
+          sourceCodeLink={selectedProject.sourceCodeLink}
+          onClose={closeModal}
+        />
       )}
     </section>
   );

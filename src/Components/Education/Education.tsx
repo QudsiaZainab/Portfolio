@@ -6,7 +6,7 @@ const Education: React.FC = () => {
         <section className="education" id="education">
             <h1 className="heading">My <span>Education</span></h1>
             <div id="education-container">
-                    <img id="education-left" src='images/images__7_-removebg-preview.png'></img>
+                    <img id="education-left" src='images/images__7_-removebg-preview.png' alt='logo'></img>
                 
                 <div id="education-right">
                     <p className='experience-date'>2020 - 2024</p>

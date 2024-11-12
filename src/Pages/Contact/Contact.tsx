@@ -32,7 +32,7 @@ const Contact = () => {
       .required('*Message is required'),
   });
 
-  const handleSubmit = async (values: FormValues) => {
+  const handleSubmit = async (values: FormValues, { resetForm }: any) => {
     setLoading(true);
     try {
       const response = await fetch('https://formspree.io/f/mldennja', {
@@ -46,6 +46,7 @@ const Contact = () => {
       if (response.ok) {
         toast.success('Message sent successfully');
         setFormSent(true);
+        resetForm();  // Reset form values after successful submission
       } else {
         toast.error('Failed to send message');
       }

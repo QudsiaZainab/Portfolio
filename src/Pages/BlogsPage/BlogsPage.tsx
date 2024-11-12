@@ -10,7 +10,6 @@ export const BlogsPage = () => {
   const dispatch = useDispatch();
   const { blogs, filter } = useSelector((state: RootState) => state.blogs);
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedProject, setSelectedProject] = useState<Blog | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const projectsPerPage = 9;
 
@@ -24,13 +23,7 @@ export const BlogsPage = () => {
     setCurrentPage(1); 
   };
 
-  const openModal = (blog: Blog) => {
-    setSelectedProject(blog);
-  };
 
-  const closeModal = () => {
-    setSelectedProject(null);
-  };
 
   const filteredProjects = blogs.filter(
     (blog) =>

@@ -7,7 +7,7 @@ import Home from './Pages/Home/Home';
 import { useSelector } from 'react-redux';
 import { RootState } from './Store/Store';
 import { ProjectsPage } from './Pages/ProjectsPage/ProjectsPage';
-import { BlogDetail } from './Components/BlogDetail/BlogDetail';
+import { BlogDetail } from './Pages/BlogDetail/BlogDetail';
 import { BlogsPage } from './Pages/BlogsPage/BlogsPage';
 
 function App() {
