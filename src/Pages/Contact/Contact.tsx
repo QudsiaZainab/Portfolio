@@ -14,7 +14,7 @@ interface FormValues {
 }
 
 const Contact = () => {
-  const [formSent, setFormSent] = useState(false);
+  // const [formSent, setFormSent] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const validationSchema = Yup.object({
@@ -45,8 +45,8 @@ const Contact = () => {
 
       if (response.ok) {
         toast.success('Message sent successfully');
-        setFormSent(true);
-        resetForm();  // Reset form values after successful submission
+        // setFormSent(true);
+        resetForm();  
       } else {
         toast.error('Failed to send message');
       }

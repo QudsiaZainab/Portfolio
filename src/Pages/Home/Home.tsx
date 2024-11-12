@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { Services } from '../../Components/Services/Services';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../Store/Store';
+import {  useDispatch } from 'react-redux';
 import { setActiveSection } from '../../Features/SectionSlice';
 import { useScrollReveal } from '../../Hook/useScrollReveal';
 import './Home.css';

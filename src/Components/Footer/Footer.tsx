@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
                 <p>Copyright &copy; 2024 By Qudsia Zainab | All Rights Reserved</p>
             </div>
             <div className="footer-iconTop">
-                <a href="" onClick={scrollToTop}>
+                <a  onClick={scrollToTop}>
                     <FaAngleUp className='upIcon' /> 
                 </a>
             </div>

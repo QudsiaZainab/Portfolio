@@ -3,7 +3,6 @@ import { setFilter } from '../../Features/BlogsSlice';
 import { RootState } from '../../Store/Store';
 import { useState } from 'react';
 import './BlogsPage.css';
-import { Blog } from '../../Types/BlogType';
 import { Link } from 'react-router-dom';
 
 export const BlogsPage = () => {
