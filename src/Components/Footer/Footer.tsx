@@ -14,10 +14,10 @@ const Footer: React.FC = () => {
             <div className="footer-text">
                 <p>Copyright &copy; 2024 By Qudsia Zainab | All Rights Reserved</p>
             </div>
-            <div className="footer-iconTop">
-                <a  onClick={scrollToTop}>
+            <div className="footer-iconTop" onClick={scrollToTop}>
+                {/* <button > */}
                     <FaAngleUp className='upIcon' /> 
-                </a>
+                {/* </button> */}
             </div>
         </footer>
     );

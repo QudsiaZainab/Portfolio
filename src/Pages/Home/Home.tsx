@@ -29,6 +29,27 @@ const Home = () => {
     const navigate = useNavigate();
 
 
+    const tick = () => {
+        let i = loopNum % toRotate.length;
+        let fullText = toRotate[i];
+        let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
+
+        setText(updatedText);
+
+        if (isDeleting) {
+            setDelta(prevDelta => prevDelta / 2);
+        }
+
+        if (!isDeleting && updatedText === fullText) {
+            setIsDeleting(true);
+            setDelta(period);
+        } else if (isDeleting && updatedText === '') {
+            setIsDeleting(false);
+            setLoopNum(loopNum + 1);
+            setDelta(500);
+        } else {
+        }
+    }
 
     useEffect(() => {
         const sections = document.querySelectorAll('section');
@@ -74,29 +95,8 @@ const Home = () => {
 
 
 
-    }, [dispatch, text, location, delta, navigate]);
+    }, [dispatch, text, location, delta, navigate, tick]);
 
-    const tick = () => {
-        let i = loopNum % toRotate.length;
-        let fullText = toRotate[i];
-        let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
-
-        setText(updatedText);
-
-        if (isDeleting) {
-            setDelta(prevDelta => prevDelta / 2);
-        }
-
-        if (!isDeleting && updatedText === fullText) {
-            setIsDeleting(true);
-            setDelta(period);
-        } else if (isDeleting && updatedText === '') {
-            setIsDeleting(false);
-            setLoopNum(loopNum + 1);
-            setDelta(500);
-        } else {
-        }
-    }
 
 
     return (
