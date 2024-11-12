@@ -1,0 +1,37 @@
+.skills{
+    background: var(--snd-bf-color);
+}
+
+#skills-container{
+    padding-top: 4rem;
+    gap: 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.skill-box{
+    border: 1px solid transparent;
+    background: var(--bg-color);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 10px;
+    min-width: 12rem;
+}
+
+.percent{
+    padding: 1rem;
+    font-size: 1.7rem;
+    margin-top: 1rem;
+    background: var(--snd-bf-color);
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.skill-box:hover{
+    border-color: var(--main-color);
+}
+
+.skill-box:hover .percent{
+    background: var(--main-color);
+}

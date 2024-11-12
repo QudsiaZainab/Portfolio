@@ -1,0 +1,16 @@
+#education-container{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 3rem;
+    padding-left: 1rem;
+}
+
+#education-container img{
+    width: 12rem;
+    height: 10rem;
+}
+
+.education{
+    background: var(--snd-bf-color);
+}

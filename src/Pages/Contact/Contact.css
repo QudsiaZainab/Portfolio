@@ -1,0 +1,17 @@
+.error-message {
+    color: red;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .custom-toast .Toastify__toast {
+    font-size: 18px !important;
+  }
+
+  @media (max-width: 500px) {
+    .custom-toast .Toastify__toast {
+       width: 40rem!important;
+       bottom: 10rem;
+      }
+  }
+  

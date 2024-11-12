@@ -1,0 +1,31 @@
+.experience{
+    background: var(--bg-color);
+}
+
+#experience-container{
+    margin-top: 4rem;
+    padding-left: 1rem;
+}
+
+.experience-date{
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+#experience-container h1{
+    font-size: 2.5rem;
+}
+
+.experience-company{
+    font-size: 1.7rem;
+    color: var(--main-color);
+    text-align: justify;
+}
+
+.experience-detail{
+    color: white;
+    margin-top: 1rem;
+    text-align: justify;
+    font-size: 1.7rem;
+}

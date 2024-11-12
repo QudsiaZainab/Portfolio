@@ -1,0 +1,20 @@
+.blog input{
+    margin-bottom: 3rem;
+    background: transparent;
+    border-radius: 5px;
+    border: 1px solid var(--main-color);
+    padding: 1rem;
+    width: 100%;
+    color: var(--main-color);
+    margin-top: 3rem;
+}
+
+#more-projects-btn{
+    display: flex;
+    margin-top: 4rem;
+    justify-content: center;
+}
+
+.blog{
+    background: var(--bg-color);
+}

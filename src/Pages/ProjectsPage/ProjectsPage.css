@@ -1,0 +1,33 @@
+#portfolio-page{
+    background: var(--bg-color)!important;
+}
+
+.portfolio-layer{
+    background: var(--snd-bf-color)!important;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+  }
+  
+  .page-btn {
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background-color: var(--snd-bf-color);
+    transition: background-color 0.3s;
+    color: var(--txt-color);
+  }
+  
+  .page-btn:hover {
+    background-color: var(--main-color);
+  }
+  
+  .page-btn.active {
+    background-color: var(--main-color);
+    color: var(--txt-color);
+  }
+  
